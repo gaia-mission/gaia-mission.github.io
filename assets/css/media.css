@@ -1,0 +1,52 @@
+/* RULES */
+@media screen and (max-width: 1000px) and (min-width: 100px) {
+    /* classes */
+    .media-1 {
+        display: none;
+    }
+    .media-2 {
+        display: none;
+    }
+    .media-3 {
+        display: none;
+    }    
+}
+
+@media screen and (max-width: 1000px) and (min-width: 100px) {
+    /* classes */
+    .media-0 {
+        display: none;
+    }
+    .media-2 {
+        display: none;
+    }
+    .media-3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 100px) {
+    /* classes */
+    .media-0 {
+        display: none;
+    }
+    .media-1 {
+        display: none;
+    }
+    .media-3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 100px) {
+    /* classes */
+    .media-0 {
+        display: none;
+    }
+    .media-1 {
+        display: none;
+    }
+    .media-2 {
+        display: none;
+    }
+}

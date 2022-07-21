@@ -1,0 +1,106 @@
+/* VALS */
+:root {
+    /* colours / intensity */
+    --colour-primary:   #;
+    --colour-secondary: #;
+    --colour-tertiary:  #;
+
+    --colour-white:     #;
+    --colour-grey:      #;
+    --colour-black:     #;
+
+    --colour-positive:  #;
+    --colour-negative:  #;
+    --colour-info:      #;
+    --colour-warning:   #;
+
+    --inten-primary:   1.0;
+    --inten-secondary: 0.5;
+    
+    /* layout */
+}
+
+/* RULES */
+
+
+/* STYLE */
+body {
+    position: absolute;
+    
+    top:  0;
+    left: 0;
+
+    margin: 0;
+}
+    /* heaader */
+    body header {
+        padding: 16px;
+    }
+        body header a {
+            display: inline;
+
+            text-decoration: none;
+        }
+            body header a img {
+                display: inherit;
+            }
+            body header a h2 {
+                display: inherit;
+
+                color: var(--colour-primary);
+            }
+        body header nav {
+            display: inline;
+        }
+            body header nav a {
+                display: inherit;
+            }
+            
+    /* section */
+    body section {
+
+    }
+        body section article {
+
+        }
+    
+    /* fixed side */
+    body aside {
+        position: fixed;
+    }
+        body aside a {
+            display: block;
+        }
+            body aside a  img {
+
+            }
+
+    /* footer */
+    body footer {
+        padding: 32px;
+    }
+        body footer a {
+            display: inline;
+
+            text-decoration: none;
+        }
+            body footer a img {
+                display: inherit;
+            }
+            body footer a h2 {
+                display: inherit;
+            }
+        body footer table {
+
+        }
+            body footer table tr {}
+                body footer table tr th {}
+                body footer table tr td a {
+                    text-decoration: none;
+                }
+        body footer span {
+            display: inline;
+        }
+        body footer div {
+            display: inline;
+        }
