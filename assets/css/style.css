@@ -1,0 +1,261 @@
+/* VALS */
+:root {
+    /* colours / intensity */
+    --colour-primary:   #;
+    --colour-secondary: #;
+    --colour-tertiary:  #;
+
+    --colour-white:     #FFFFFF;
+    --colour-grey:      #979797;
+    --colour-black:     #000000;
+
+    --colour-positive:  #;
+    --colour-negative:  #;
+    --colour-info:      #;
+    --colour-warning:   #;
+
+    --inten-primary:   1.0;
+    --inten-secondary: 0.5;
+}
+
+/* STYLE */
+html {
+    scroll-behavior: smooth;
+
+    font-family: 'segoe UI';
+}
+
+body {
+    position: absolute;
+    top:  0;
+    left: 0;
+
+    margin: 0;
+
+    color: var(--colour-white);
+    background-color: var(--colour-black);
+
+    overflow-x: hidden;
+}
+    /* heaader */
+    body header {
+        position: fixed;
+        z-index: 3;
+
+        width: calc(100vw - 32px);
+
+        padding: 16px;
+
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+        body header a {
+            display: ruby;
+
+            text-decoration: none;
+        }
+            body header a img {
+                display: inline;
+            }
+            body header a h2 {
+                display: inline;
+
+                color: var(--colour-primary);
+            }
+        body header nav {
+            display: ruby;
+        }
+            body header nav a {
+                display: inherit;
+
+                margin: 0;
+                margin-left:  16px;
+                margin-right: 16px;
+
+                font-size: 13.5px;
+            }
+        body header button {
+            background-color: rgb(0, 0, 0, 0);
+            
+            border: none;
+            
+            cursor: pointer;
+        }
+            body header button svg {
+                height: 24px;
+                width:  24px;
+
+                fill: var(--colour-white);
+            }
+            
+    /* section */
+    body section {
+        z-index: 0;
+
+        width:  100vw;
+        height: 100%;
+    }
+        body section article {
+            position: relative;
+
+            height: 100vh;
+            width:  100vw;
+
+            overflow: hidden;
+        }
+            body section article img {
+                position: absolute;
+            }
+            body section #mission img {
+                left: calc(50vw - var(--BdSctn-mission-Img-lft) / 2);
+            }
+            body section #team img {
+                left: calc(50vw - var(--BdSctn-team-Img-lft) / 2);
+            }
+            body section #about img {
+                left: calc(50vw - var(--BdSctn-about-Img-lft) / 2);
+            }
+            body section #sponsors img {
+                left: calc(50vw - var(--BdSctn-sponsors-Img-lft) / 2);
+            }
+            body section article div {
+                position: absolute;
+                bottom: 14%;
+            }
+                body section article div h3 {
+                    font-weight: 600;
+                    font-size: 22px;
+                    letter-spacing: -0.042em;
+                    margin: 0;
+                }
+                body section article div h1 {
+                    font-size: 46px;
+                    margin: 0;
+                }
+                body section article div span {
+                    max-width: 40%;
+                    display: block;
+
+                    margin: 0;
+                }
+                body section article div button {
+                    width: 160px;
+                    height: 55px;
+
+                    border: 2px solid var(--colour-white);
+                    border-radius: 5px;
+                    
+                    margin-top: 16px;
+
+                    color: var(--colour-white);
+                    background: rgba(0, 0, 0, 0);
+                    
+                    font-size: 13px;
+                    font-weight: 600;
+                    font-family: 'Segoe UI';
+                    
+                    cursor: pointer;
+
+                    background-image: linear-gradient(var(--colour-white), var(--colour-white));
+                    background-position: 50% 100%;
+                    background-size: 100% 0%;
+                    background-repeat: no-repeat;
+
+                    transition: background-size .2s, background-position 0s .2s, color .2s;
+                }
+                body section article div button:hover {
+                    color: var(--colour-black);
+                    background-position: 50% 100%;
+                    background-size: 100% 100%;
+                }
+
+    /* aside */
+    body aside {
+        z-index: 2;
+    }
+
+    /* footer */
+    body footer {
+        z-index: 1;
+
+        padding: 32px;
+        padding-bottom: 4px;
+
+        width: calc(100vw - 64px);
+
+        overflow: hidden;
+    }
+        body footer a {
+            margin-right: 64px;
+
+            display: inline-block;
+
+            text-decoration: none;
+        }
+            body footer a img {
+                display: inline;
+            }
+            body footer a h2 {
+                display: inline;
+            }
+        body footer table {
+            margin: 0;
+            margin-top:    16px;
+            margin-bottom: 32px;
+
+            font-size: 14.5px;
+        }
+                body footer table tr th {
+                    color: var(--colour-grey);
+
+                    min-width: 200px;
+                    text-align: start;
+                }
+                body footer table tr td {
+                    min-width: 200px;
+                    text-align: start;
+                }
+                    body footer table tr td a {
+                        text-decoration: none;
+
+                        cursor: pointer;
+                    }
+        body footer div {
+            width: 100%;
+            
+            display: flex;
+            
+            align-items: center;
+
+            font-size: 12px;
+        }
+            body footer div span {
+                color: var(--colour-grey);
+            }
+                body footer div span a  {
+                    margin: 0;
+                    margin-left:  16px;
+                    margin-right: 16px;
+                    
+                    color: var(--colour-white);
+                    
+                    cursor: pointer;
+                    
+                    transition: color .2s;
+                }
+                body footer div span a:hover {
+                    color: var(--colour-grey);
+                }
+                    body footer div span a svg {
+                        height: 26px;
+                        width:  26px;
+                        
+                        fill: var(--colour-white);
+
+                        transition: fill .2s;
+                    }
+                    body footer div span a svg:hover {
+                        fill: var(--colour-grey);
+                    }
