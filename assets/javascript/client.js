@@ -18,7 +18,7 @@ class Client {
     }
 
     // private
-    getCookieValueFromArray(key, cookieArray) {
+    static getCookieValueFromArray(key, cookieArray) {
         for (var index = 0; index < cookieArray.length; index++) {
             let cookieKey   = cookieArray[index].split('=')[0];
             let cookieValue = cookieArray[index].split('=')[1];
@@ -29,7 +29,7 @@ class Client {
         return "";
     }
 
-    getDateFromNowStepping(days) {
+    static getDateFromNowStepping(days) {
         const date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         return date;

@@ -16,46 +16,21 @@
 
     --inten-primary:   1.0;
     --inten-secondary: 0.5;
-    
-    /* layout */
-}
-
-/* RULES */
-.nomark {
-    user-select: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-.underline {
-    color: var(--colour-white);
-    
-    transition: background-size 0.2s, background-position 0s 0.2s;;
-
-    background-image: linear-gradient(var(--colour-white), var(--colour-white));
-    background-position: 0 100%;
-    background-size: 0% 1.5px;
-    background-repeat: no-repeat;
-}
-.underline:hover {
-    background-position: 100% 100%;
-    background-size: 100% 1.5px;
 }
 
 /* STYLE */
 html {
     scroll-behavior: smooth;
+
+    font-family: 'segoe UI';
 }
+
 body {
     position: absolute;
-    
     top:  0;
     left: 0;
 
     margin: 0;
-
-    font-family: 'segoe UI';
 
     color: var(--colour-white);
     background-color: var(--colour-black);
@@ -65,15 +40,16 @@ body {
     /* heaader */
     body header {
         position: fixed;
+        z-index: 3;
 
         width: calc(100vw - 32px);
 
         padding: 16px;
 
+        display: flex;
+
         justify-content: space-between;
         align-items: center;
-        
-        display: flex;
     }
         body header a {
             display: ruby;
@@ -97,63 +73,143 @@ body {
                 margin: 0;
                 margin-left:  16px;
                 margin-right: 16px;
+
+                font-size: 13.5px;
+            }
+        body header button {
+            background-color: rgb(0, 0, 0, 0);
+            
+            border: none;
+            
+            cursor: pointer;
+        }
+            body header button svg {
+                height: 24px;
+                width:  24px;
+
+                fill: var(--colour-white);
             }
             
     /* section */
     body section {
+        z-index: 0;
 
+        width:  100vw;
+        height: 100%;
     }
         body section article {
+            position: relative;
 
+            height: 100vh;
+            width:  100vw;
+
+            overflow: hidden;
         }
-    
-    /* fixed side */
-    body aside {
-        position: fixed;
-
-        top: calc(50% - 164px / 2);
-        right: 0;
-
-        padding: 2px;
-    }
-        body aside a {
-            padding: 2px;
-
-            display: block;
-        }
-            body aside a  img {
-                height: 32px;
-                width:  32px;
+            body section article img {
+                position: absolute;
             }
+            body section #mission img {
+                left: calc(50vw - var(--BdSctn-mission-Img-lft) / 2);
+            }
+            body section #team img {
+                left: calc(50vw - var(--BdSctn-team-Img-lft) / 2);
+            }
+            body section #about img {
+                left: calc(50vw - var(--BdSctn-about-Img-lft) / 2);
+            }
+            body section #sponsors img {
+                left: calc(50vw - var(--BdSctn-sponsors-Img-lft) / 2);
+            }
+            body section article div {
+                position: absolute;
+                bottom: 14%;
+            }
+                body section article div h3 {
+                    font-weight: 600;
+                    font-size: 22px;
+                    letter-spacing: -0.042em;
+                    margin: 0;
+                }
+                body section article div h1 {
+                    font-size: 46px;
+                    margin: 0;
+                }
+                body section article div span {
+                    max-width: 40%;
+                    display: block;
+
+                    margin: 0;
+                }
+                body section article div button {
+                    width: 160px;
+                    height: 55px;
+
+                    border: 2px solid var(--colour-white);
+                    border-radius: 5px;
+                    
+                    margin-top: 16px;
+
+                    color: var(--colour-white);
+                    background: rgba(0, 0, 0, 0);
+                    
+                    font-size: 13px;
+                    font-weight: 600;
+                    font-family: 'Segoe UI';
+                    
+                    cursor: pointer;
+
+                    background-image: linear-gradient(var(--colour-white), var(--colour-white));
+                    background-position: 50% 100%;
+                    background-size: 100% 0%;
+                    background-repeat: no-repeat;
+
+                    transition: background-size .2s, background-position 0s .2s, color .2s;
+                }
+                body section article div button:hover {
+                    color: var(--colour-black);
+                    background-position: 50% 100%;
+                    background-size: 100% 100%;
+                }
+
+    /* aside */
+    body aside {
+        z-index: 2;
+    }
 
     /* footer */
     body footer {
+        z-index: 1;
+
         padding: 32px;
         padding-bottom: 4px;
+
+        width: calc(100vw - 64px);
+
+        overflow: hidden;
     }
         body footer a {
+            margin-right: 64px;
+
             display: inline-block;
 
             text-decoration: none;
-
-            margin-right: 64px;
         }
             body footer a img {
-                display: inherit;
+                display: inline;
             }
             body footer a h2 {
-                display: inherit;
+                display: inline;
             }
         body footer table {
-
             margin: 0;
             margin-top:    16px;
             margin-bottom: 32px;
 
-            float: right;
+            font-size: 14.5px;
         }
-            body footer table tr {}
                 body footer table tr th {
+                    color: var(--colour-grey);
+
                     min-width: 200px;
                     text-align: start;
                 }
@@ -163,13 +219,14 @@ body {
                 }
                     body footer table tr td a {
                         text-decoration: none;
+
+                        cursor: pointer;
                     }
         body footer div {
-            display: flex;
-
             width: 100%;
             
-            justify-content: space-between;
+            display: flex;
+            
             align-items: center;
 
             font-size: 12px;
@@ -184,12 +241,21 @@ body {
                     
                     color: var(--colour-white);
                     
-                    transition: color .1s;
+                    cursor: pointer;
+                    
+                    transition: color .2s;
                 }
                 body footer div span a:hover {
                     color: var(--colour-grey);
                 }
-                    body footer div span a img {
+                    body footer div span a svg {
                         height: 26px;
                         width:  26px;
+                        
+                        fill: var(--colour-white);
+
+                        transition: fill .2s;
+                    }
+                    body footer div span a svg:hover {
+                        fill: var(--colour-grey);
                     }

@@ -1,0 +1,29 @@
+/* RULES */
+.nomark {
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.underline {
+    color: var(--colour-white);
+    
+    transition: background-size 0.2s, background-position 0s 0.2s;
+
+    background-image: linear-gradient(var(--colour-white), var(--colour-white));
+    background-position: 0 100%;
+    background-size: 0% 0.7px;
+    background-repeat: no-repeat;
+}
+.underline:hover {
+    background-position: 100% 100%;
+    background-size: 100% 0.5px;
+}
+.active_underline {
+    background-image: linear-gradient(var(--colour-white), var(--colour-white));
+    background-position: 100% 100%;
+    background-size: 100% 0.5px;
+    background-repeat: no-repeat;
+}
