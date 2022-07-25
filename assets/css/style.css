@@ -52,8 +52,6 @@ body {
         align-items: center;
     }
         body header a {
-            display: ruby;
-
             text-decoration: none;
         }
             body header a img {
@@ -65,7 +63,7 @@ body {
                 color: var(--colour-primary);
             }
         body header nav {
-            display: ruby;
+            display: flex;
         }
             body header nav a {
                 display: inherit;
