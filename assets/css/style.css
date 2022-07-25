@@ -22,7 +22,7 @@
 html {
     scroll-behavior: smooth;
 
-    font-family: 'segoe UI';
+    font-family: 'Roboto';
 }
 
 body {
@@ -104,30 +104,25 @@ body {
             width:  100vw;
 
             overflow: hidden;
+            
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
         }
             body section article img {
                 position: absolute;
-            }
-            body section #mission img {
-                left: calc(50vw - var(--BdSctn-mission-Img-lft) / 2);
-            }
-            body section #team img {
-                left: calc(50vw - var(--BdSctn-team-Img-lft) / 2);
-            }
-            body section #about img {
-                left: calc(50vw - var(--BdSctn-about-Img-lft) / 2);
-            }
-            body section #sponsors img {
-                left: calc(50vw - var(--BdSctn-sponsors-Img-lft) / 2);
+
+                min-height: 100vh;
+                min-width:  100vw;
             }
             body section article div {
                 position: absolute;
                 bottom: 14%;
             }
                 body section article div h3 {
-                    font-weight: 600;
+                    font-weight: 500;
                     font-size: 22px;
-                    letter-spacing: -0.042em;
                     margin: 0;
                 }
                 body section article div h1 {
@@ -139,6 +134,8 @@ body {
                     display: block;
 
                     margin: 0;
+
+                    color: var(--colour-grey);
                 }
                 body section article div button {
                     width: 160px;
@@ -154,7 +151,7 @@ body {
                     
                     font-size: 13px;
                     font-weight: 600;
-                    font-family: 'Segoe UI';
+                    font-family: 'Roboto';
                     
                     cursor: pointer;
 
@@ -210,17 +207,17 @@ body {
                 body footer table tr th {
                     color: var(--colour-grey);
 
-                    min-width: 200px;
                     text-align: start;
                 }
                 body footer table tr td {
-                    min-width: 200px;
                     text-align: start;
                 }
                     body footer table tr td a {
                         text-decoration: none;
 
                         cursor: pointer;
+
+                        margin-right: calc(33vw - 75px);
                     }
         body footer div {
             width: 100%;

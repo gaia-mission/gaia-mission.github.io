@@ -3,4 +3,4 @@ const client = new Client();
 
 window.onload   = function() { site.load();   }
 window.onscroll = function() { site.scroll(); }
-window.click    = function() { site.click();  }
+window.onclick  = function(event) { site.click(event);  }
