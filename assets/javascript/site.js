@@ -1,5 +1,6 @@
 class Site {
     constructor() {
+        this.drawerToggle = document.getElementById("DrawerToggle")
         this.navigation = document.getElementById("Navigation")
         this.section    = document.getElementById("Section")
         this.drawer     = document.getElementById("Drawer");
@@ -8,17 +9,23 @@ class Site {
     // EVENT
     load() {
         this.scroll();
-        this.loadImages();
     }
     scroll() {
         this.updateNavigation();
         this.closeDrawer();
     }
-    click() {
-        
+    click(event) {
+        this.clickDrawer(event);    
     }
 
     // DRAWER
+    clickDrawer(event) {
+        if (!this.clickedElement(this.drawerToggle, event)) {
+            if (!this.clickedElement(this.drawer, event)) {
+                this.closeDrawer();
+            }
+        }
+    }
     toggleDrawer() {
         if (this.drawerIsActive) {
             this.closeDrawer();
@@ -34,30 +41,16 @@ class Site {
         this.drawerIsActive = false;
         this.drawer.classList.remove("ActiveDrawer");
     }
-
-    // IMGS
-    loadImages() {
-        let images = this.getImages();
-        this.setCSSImageValue(images);
-
-    }
-    getImages() {
-        var images = {};
-        for (let node of this.section.children) {
-            for (let child of node.children) {
-                if (child.tagName === "IMG") {
-                    images[node.id] = child;
-                }
+    clickedElement(element, event) {
+        if (element == event.target) {
+            return true;
+        }
+        for (let child of element.children) {
+            if(this.clickedElement(child, event)) {
+                return true;
             }
         }
-        return images;
-    }
-    setCSSImageValue(images) {
-        for (let key in images) {
-            let CSSVariableName  = `--BdSctn-${key}-Img-lft`;
-            let CSSVariableValue = `${images[key].clientWidth}px`;
-            document.documentElement.style.setProperty(CSSVariableName, CSSVariableValue);
-        }
+        return false;
     }
 
     // NAVIGATION

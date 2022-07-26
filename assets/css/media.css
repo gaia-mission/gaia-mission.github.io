@@ -9,6 +9,10 @@
         left:  14%;
     }
 
+    body header a h2 {
+        font-size: 28px;
+    }
+
     body aside {
         position: fixed;
         top: 0;
