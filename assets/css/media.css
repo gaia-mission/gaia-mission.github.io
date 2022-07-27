@@ -80,6 +80,9 @@
         body footer table tr td {
             min-width: 0;
         }
+            body footer table tr td a {
+                margin-right: calc(33vw - 75px)
+            }
 }
 @media screen and (min-width: 780px) {
     /* classes */
@@ -122,4 +125,7 @@
         body footer table tr td {
             min-width: 200px;
         }
+            body footer table tr td a {
+                margin-right: calc(21vw - 75px);
+            }
 }

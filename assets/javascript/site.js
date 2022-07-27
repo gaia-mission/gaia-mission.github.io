@@ -1,10 +1,14 @@
 class Site {
     constructor() {
+        this.fadeContainers = document.getElementsByClassName("containerFade");
         this.drawerToggle = document.getElementById("DrawerToggle")
         this.navigation = document.getElementById("Navigation")
-        this.section    = document.getElementById("Section")
-        this.drawer     = document.getElementById("Drawer");
+        this.section = document.getElementById("Section")
+        this.drawer = document.getElementById("Drawer");
         this.drawerIsActive = false;
+
+        // VALS
+        this.THRESHOLD_FADING_ELEMENTS = 0;
     }
     // EVENT
     load() {
@@ -12,6 +16,7 @@ class Site {
     }
     scroll() {
         this.updateNavigation();
+        this.updateContainers();
         this.closeDrawer();
     }
     click(event) {
@@ -55,9 +60,11 @@ class Site {
 
     // NAVIGATION
     updateNavigation() {
-        var index = Math.round(scrollY / screen.height)
-        this.deactivateNavigationNodes();
-        this.activateNavigationNode(index);
+        if (!this.navigation == null) {
+            var index = Math.round(scrollY / screen.height)
+            this.deactivateNavigationNodes();
+            this.activateNavigationNode(index);
+        }
     }
     deactivateNavigationNodes() {
         for (let child of this.navigation.children) {
@@ -66,5 +73,22 @@ class Site {
     }
     activateNavigationNode(index) {
         this.navigation.children[index].classList.add('active_underline');
+    }
+
+    // FADING
+    updateContainers() {
+        for (let element of this.fadeContainers) {
+            var elementBound = element.getBoundingClientRect().top;
+            var windowBound = window.innerHeight;
+            var pixelsInView = elementBound - windowBound;
+            this.updateFadeElement(element, pixelsInView);
+        }
+    }
+    updateFadeElement(element, pixelsInView) {
+        if (pixelsInView < this.THRESHOLD_FADING_ELEMENTS) {
+            element.classList.add("visibleContainer");
+        } else {
+            element.classList.remove("visibleContainer");
+        }
     }
 }
