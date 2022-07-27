@@ -5,9 +5,19 @@
         display: none;
     }
 
-    body section article div {
-        left:  14%;
+    body section .info {
+        padding: 32px;
+        padding-top: 96px;
+
+        width: calc(100vw - 64px);
     }
+    body section article div {
+        padding-left:  10% !important;
+        /* padding-right: 10% !important; */
+    }
+        body section article .chapter span {
+            display: none;
+        }
 
     body header a h2 {
         font-size: 28px;
@@ -90,9 +100,19 @@
         display: none;
     }
 
-    body section article div {
-        left:  64px;
+    body section .info {
+        padding: 12%;
+        padding-top: 128px;
+
+        width: calc(100vw - 24%);
     }
+    body section article div {
+        padding-left:  80px !important;
+        padding-right: 80px !important;
+    }
+        body section article .chapter span {
+            display: block;
+        }
 
     body aside {
         position: fixed;
