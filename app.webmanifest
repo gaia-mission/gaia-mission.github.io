@@ -1,0 +1,16 @@
+{
+    "name": "Gaia Mission",
+    "short_name": "Gaia",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color" : "#000000" ,
+    "description": "",
+    "icons": [{
+      "src": "",
+      "sizes": "48x48",
+      "type": "image/png"
+    }],
+    "related_applications": [{
+      "platform": "Web"
+    }]
+  }

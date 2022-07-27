@@ -1,3 +1,7 @@
+::selection {
+    color: var(--colour-black);
+    background-color: var(--colour-white);
+}
 /* VALS */
 :root {
     /* colours / intensity */
@@ -98,8 +102,8 @@ body {
         body section article {
             position: relative;
 
-            height: 100vh;
-            width:  100vw;
+            min-height: 100vh;
+            width: 100vw;
 
             overflow: hidden;
             
@@ -113,21 +117,33 @@ body {
 
                 min-height: 100vh;
                 min-width:  100vw;
+
+                animation: 1s ease-in  backgroundImgFadeIn;
+            }
+            body section article iframe {
+                width:     100vw;
+                max-height: 75vh;
+                max-width: calc(948 / 533 * 75vh);
+                height:    calc(533 / 948 * 100vw);
+
+                animation: 1s ease-in  backgroundImgFadeIn;
             }
             body section article div {
                 position: absolute;
+            }
+            body section article .chapter {
                 bottom: 14%;
             }
-                body section article div h3 {
+                body section article .chapter h3 {
                     font-weight: 500;
                     font-size: 22px;
                     margin: 0;
                 }
-                body section article div h1 {
+                body section article .chapter h1 {
                     font-size: 46px;
                     margin: 0;
                 }
-                body section article div span {
+                body section article .chapter span {
                     max-width: 40%;
                     display: block;
 
@@ -135,7 +151,7 @@ body {
 
                     color: var(--colour-grey);
                 }
-                body section article div button {
+                body section article .chapter button {
                     width: 160px;
                     height: 55px;
 
@@ -165,6 +181,33 @@ body {
                     background-position: 50% 100%;
                     background-size: 100% 100%;
                 }
+            body section article .text {
+                top: 2%;
+
+                padding: 16px;
+                padding-right: 64px;
+            }
+                body section article .text h1 {
+                    font-size: 54px;
+                    
+                    margin: 0;
+                    margin-top: 64px;
+                }
+                body section article .text h2 {
+                    font-size: 29px;
+                }
+                body section article .text h4 {
+                    font-style: italic;
+                    font-size: 16px;
+
+                    color: var(--colour-grey);
+                }
+                body section article .text p {
+
+                }
+            body section article .visibleContainer {
+                animation: containerFadeIn .4s ease-in forwards;
+            }
 
     /* aside */
     body aside {
@@ -214,8 +257,6 @@ body {
                         text-decoration: none;
 
                         cursor: pointer;
-
-                        margin-right: calc(33vw - 75px);
                     }
         body footer div {
             width: 100%;
