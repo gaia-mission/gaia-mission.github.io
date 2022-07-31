@@ -32,6 +32,10 @@
     transform: translate(0px, 64px);
 }
 
+.ActiveDialog {
+    display: grid;
+}
+
 /* ANIMATIONS */
 @keyframes backgroundImgFadeIn {
     0% {

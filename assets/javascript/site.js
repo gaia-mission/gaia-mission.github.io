@@ -5,13 +5,16 @@ class Site {
         this.navigation = document.getElementById("Navigation");
         this.section = document.getElementById("Section");
         this.drawer = document.getElementById("Drawer");
+        this.dialog = document.getElementById("Dialog");
         this.header = document.getElementById("Header");
+        
         this.drawerIsActive = false;
+        this.dialogIsActive = false;
 
         this.prevScrollY = scrollY;
         // VALS
         this.THRESHOLD_FADING_ELEMENTS = 0;
-        this.THRESHOLD_HEADER_INVIS_BACKGROUND = 128;
+        this.THRESHOLD_HEADER_INVIS_BACKGROUND = 75;
     }
     // EVENT
     load() {
@@ -126,5 +129,16 @@ class Site {
             // here the header background is invis
         }
         this.prevScrollY = scrollY;
+    }
+
+    // DIALOG
+    openDrawer() {
+        this.dialogIsActive = true;
+        this.dialog.classList.add("ActiveDialog");
+    }
+    closeDialog() {
+        this.dialogIsActive = false;
+        this.dialog.classList.remove("ActiveDialog");
+
     }
 }
