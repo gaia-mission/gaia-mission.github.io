@@ -6,12 +6,14 @@ class Site {
         this.section = document.getElementById("Section");
         this.drawer = document.getElementById("Drawer");
         this.header = document.getElementById("Header");
+        
         this.drawerIsActive = false;
+        this.dialogIsActive = false;
 
         this.prevScrollY = scrollY;
         // VALS
         this.THRESHOLD_FADING_ELEMENTS = 0;
-        this.THRESHOLD_HEADER_INVIS_BACKGROUND = 128;
+        this.THRESHOLD_HEADER_INVIS_BACKGROUND = 75;
     }
     // EVENT
     load() {
